@@ -1,0 +1,7 @@
+Project,Model,Paper (Table 4),Authors' saved run (BKP),Our run,Same significant variables and direction?,Explanation
+Hadoop,BASE,0.33,0.329,0.329,Yes,Within rounding
+Hadoop,BSAP (BASE + anti-patterns),0.35,0.352,0.348,"Yes: Ignoring Interrupted Exception (+), Log and Throw (+), Potentially Recoverable (+)",No fixed random seed in the bootstrap
+Hibernate,BASE,0.21,0.213,0.213,Yes,Within rounding
+Hibernate,BSAP,0.23,0.235,0.232,"Yes: Catch SLOC (+), Dummy Handler (+)",No fixed random seed in the bootstrap
+Hadoop,BSFC (not needed for RQ2),0.37,0.350,0.351,Not compared,Package BSFC uses 23 predictors; the paper reports 31
+Hibernate,BSFC (not needed for RQ2),0.28,0.231,0.235,Not compared,Package BSFC uses 19 predictors; the paper reports 27
