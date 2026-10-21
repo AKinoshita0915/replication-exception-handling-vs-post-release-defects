@@ -1,0 +1,10 @@
+gson/src/main/java/com/google/gson/annotations/package-info.java
+gson/src/main/java/com/google/gson/Gson.java
+gson/src/main/java/com/google/gson/internal/bind/EnumTypeAdapter.java
+gson/src/main/java/com/google/gson/internal/bind/JsonElementTypeAdapter.java
+gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java
+gson/src/main/java/com/google/gson/internal/package-info.java
+gson/src/main/java/com/google/gson/internal/Streams.java
+gson/src/main/java/com/google/gson/package-info.java
+gson/src/main/java/com/google/gson/reflect/package-info.java
+gson/src/main/java/com/google/gson/stream/package-info.java

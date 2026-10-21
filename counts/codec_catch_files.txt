@@ -1,0 +1,12 @@
+src/main/java/org/apache/commons/codec/binary/Hex.java
+src/main/java/org/apache/commons/codec/binary/StringUtils.java
+src/main/java/org/apache/commons/codec/digest/DigestUtils.java
+src/main/java/org/apache/commons/codec/digest/HmacUtils.java
+src/main/java/org/apache/commons/codec/language/bm/Rule.java
+src/main/java/org/apache/commons/codec/language/DaitchMokotoffSoundex.java
+src/main/java/org/apache/commons/codec/net/BCodec.java
+src/main/java/org/apache/commons/codec/net/PercentCodec.java
+src/main/java/org/apache/commons/codec/net/QCodec.java
+src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java
+src/main/java/org/apache/commons/codec/net/URLCodec.java
+src/main/java/org/apache/commons/codec/StringEncoderComparator.java
