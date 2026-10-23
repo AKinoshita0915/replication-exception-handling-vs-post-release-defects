@@ -1,0 +1,5 @@
+gson/src/main/java/com/google/gson/Gson.java
+gson/src/main/java/com/google/gson/internal/bind/EnumTypeAdapter.java
+gson/src/main/java/com/google/gson/internal/bind/JsonElementTypeAdapter.java
+gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java
+gson/src/main/java/com/google/gson/internal/Streams.java

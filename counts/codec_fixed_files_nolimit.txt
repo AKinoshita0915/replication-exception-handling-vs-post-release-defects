@@ -1,0 +1,5 @@
+src/main/java/org/apache/commons/codec/language/bm/PhoneticEngine.java
+src/main/java/org/apache/commons/codec/language/ColognePhonetic.java
+src/main/java/org/apache/commons/codec/language/MatchRatingApproachEncoder.java
+src/main/java/org/apache/commons/codec/language/RefinedSoundex.java
+src/main/java/org/apache/commons/codec/net/QuotedPrintableCodec.java
