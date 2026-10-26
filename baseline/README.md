@@ -22,4 +22,6 @@ OR in console:
 veryfy the update in the session by 
 body(modelSimplification), and find modified section.
 
-## Results: baseline_comparison.csv. Authors' saved output: *_BKP.csv.
+## Results: 
+- baseline_comparison.csv.
+- Authors' saved output: *_BKP.csv.
