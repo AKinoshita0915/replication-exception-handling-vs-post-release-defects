@@ -55,3 +55,15 @@ PAT="($(paste -sd'|' ../lang_bug_keys.txt))([^0-9]|$)"
 git log master --since=2023-11-18 --until=2024-11-18 --no-merges -E --grep="$PAT" --name-only --pretty=format: -- src/main/java | grep '\.java$' | sort -u > ../lang_fixed_files.txt
 comm -12 ../lang_catch_files.txt ../lang_fixed_files.txt | wc -l    # (b)
 ```
+
+## Release identifiers
+| Library | Repository | Release tag | Commit | Release date |
+|---|---|---|---|---|
+| Lang | github.com/apache/commons-lang | rel/commons-lang-3.14.0 | c8774fa74 | 2023-11-18 |
+| Codec | github.com/apache/commons-codec | rel/commons-codec-1.16.0 | 2614a4ca | 2023-06-17 |
+| Compress | github.com/apache/commons-compress | rel/commons-compress-1.25.0 | 38dec7fb4 | 2023-11-12 |
+| Gson | github.com/google/gson | gson-parent-2.11.0 | 828a97be | 2024-05-19 |
+
+Check one: `git log -1 --format='%h %cs' rel/commons-lang-3.14.0` should print `c8774fa74 2023-11-18`.
+
+Environment for these counts: macOS Tahoe 26.5.2 (Apple silicon), git, grep and curl only. JIRA queries and the GitHub issues API were run on 21 Oct 2026. Baseline environment: R 4.6.1 (see baseline/sessionInfo.txt). Java is not used yet (needed for JTratch).
