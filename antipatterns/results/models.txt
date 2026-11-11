@@ -1,0 +1,17 @@
+catch files analysed: 134  defective: 19
+median lines of code: defective 1011, other 291 (Mann-Whitney p=0.0001)
+median catch blocks per file: defective 4, other 1
+
+BASE (log10 LOC + library): Nagelkerke R2 = 0.247
+BASE + Dummy Handler:        Nagelkerke R2 = 0.307  (LR chi2 = 5.34, p = 0.021)
+Dummy Handler: odds ratio = 4.34, p = 0.021
+predictors in the fuller model: 5; original budget (files/15) = 8.9; defective files = 19
+Codec 2x2 [[def&dummy, def&no], [other&dummy, other&no]] = [[0, 1], [0, 11]]
+Compress 2x2 [[def&dummy, def&no], [other&dummy, other&no]] = [[5, 6], [6, 40]]
+Gson 2x2 [[def&dummy, def&no], [other&dummy, other&no]] = [[0, 3], [4, 17]]
+Lang 2x2 [[def&dummy, def&no], [other&dummy, other&no]] = [[3, 1], [7, 30]]
+Mantel-Haenszel across libraries: OR = 4.38, p = 0.005
+
+pooled Fisher p = 0.0092
+drop one defective Dummy-Handler file at a time: worst-case p = 0.021 (dropping ExceptionUtils.java)
+Bonferroni for the 4 patterns tested: p x 4 = 0.037

@@ -18,6 +18,7 @@ model that adds anti-pattern metrics)?
 |---|---|
 | [`baseline/`](baseline/) | Reproduction of the original RQ2 on Hadoop 2.6 and Hibernate 5.0 with the authors' R scripts and data: our version of `analysis_functions.R`, rendered notebooks, result CSVs, the change log, and `sessionInfo.txt`. See [`baseline/README.md`](baseline/README.md). |
 | [`counts/`](counts/) | Library counts for Apache Commons Lang, Codec, Compress and Google Gson: file lists, bug keys, `counts_table.csv`, the method note, and the release identifiers (tags and commits). See [`counts/README.md`](counts/README.md). |
+| [`antipatterns/`](antipatterns/) | Milestone 3: anti-pattern detector, analysis and cross-check scripts, results, and the filled manual-check sheet. See [`antipatterns/README.md`](antipatterns/README.md). |
 
 ## Results so far
 
@@ -37,10 +38,22 @@ differences between runs are expected. The only code change is one line in
 
 | Library | Release | Main files | (a) files with catch blocks | (b) catch files changed by a fix |
 |---|---|---|---|---|
-| Commons Lang | 3.14.0 | 246 | 49 | 4 |
+| Commons Lang | 3.14.0 | 246 | 49 (41 with a real catch block) | 4 |
 | Commons Codec | 1.16.0 | 80 | 12 | 1 |
 | Commons Compress | 1.25.0 | 399 | 57 | 11 |
 | Gson | 2.11.0 | 83 | 24 | 3 |
+
+**Anti-patterns in the four libraries (Milestone 3, exploratory)**
+
+| Pattern | Defective catch files (19) | Other catch files (115) | Odds ratio | p |
+|---|---|---|---|---|
+| Generic Catch | 2 (10.5%) | 17 (14.8%) | 0.68 | 1.00 |
+| Dummy Handler (empty or log-only) | 8 (42.1%) | 17 (14.8%) | 4.19 | 0.009 (0.037 with Bonferroni) |
+| Log and Throw | 0 | 0 | n/a | n/a |
+| Ignoring Interrupted Exception | 0 | 2 (1.7%) | n/a | 1.00 |
+
+With log10(lines of code) and library as the BASE model, adding Dummy Handler raises the Nagelkerke R² from 0.247 to 0.307
+(likelihood-ratio p = 0.021). Details, limits and how to rerun: [`antipatterns/README.md`](antipatterns/README.md).
 
 ## How the counts were made
 
@@ -56,5 +69,6 @@ Files are matched by path without rename tracking. The resulting file lists are 
 
 ## Status
 
-The baseline reproduction is complete. The anti-pattern detector (JTratch or a lightweight
-alternative), open-source metrics and the model on the new libraries are still to do.
+The baseline reproduction is complete. The anti-pattern detector (a syntactic tree-sitter detector, not JTratch), its
+cross-check and the comparison on the four libraries are done and exploratory (Milestone 3). Still to do: return-only and
+continue/break handlers, and more releases per library.

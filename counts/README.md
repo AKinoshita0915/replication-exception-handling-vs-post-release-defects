@@ -22,6 +22,8 @@ A fixed defect in the issue tracker, reported after the release, linked to code 
 
 Full table with more columns: `counts_table.csv`. Method summary: `counts_method.md`.
 
+**Correction (Milestone 3):** the 49 Lang files are the grep matches listed in `lang_catch_files.txt`. Eight of them contain `catch (` only inside Javadoc examples, so Lang has 41 files with a real catch block (see `antipatterns/results/files.csv`) and the pooled total is 134, not 142. The (b) overlap of 4 is unchanged. The file list is left as in Milestone 2.
+
 ## What the numbers show
 - All four samples are small. The original study modelled 890 (Hadoop) and 440 (Hibernate) files with catch blocks. At one predictor per 15 files, one release of these libraries supports 0 to 3 predictors.
 - Codec is too small to use on its own (12 files, 1 overlap).

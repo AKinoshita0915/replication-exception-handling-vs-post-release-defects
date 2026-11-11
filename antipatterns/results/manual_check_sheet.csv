@@ -1,0 +1,174 @@
+id,part,file,detector_says,code,correct_yes_no,reviewer_initials,notes
+1,A. flagged (precision),Lang: BackgroundInitializer.java:343,ignoring_interrupted,"            return true;
+        } catch (CancellationException | ExecutionException | InterruptedException e) {
+            return false;
+        }",,,
+2,A. flagged (precision),Lang: ThreadUtils.java:567,"dummy_handler, ignoring_interrupted","            sleep(duration);
+        } catch (final InterruptedException e) {
+            // be quiet.
+        }",,,
+3,A. flagged (precision),Compress: Messages.java:56,"generic_catch, dummy_handler","                ""org.apache.commons.compress.harmony.archive.internal.nls.messages""); //$NON-NLS-1$
+        } catch (final Throwable e) {
+            e.printStackTrace();
+        }",,,
+4,A. flagged (precision),Compress: ArchiveStreamFactory.java:279,"generic_catch, dummy_handler","                }
+            } catch (final Exception e) { // NOPMD NOSONAR
+                // can generate IllegalArgumentException as well
+                // as IOException
+                // autodetection, simply not a TAR
+                // ignored
+            }",,,
+5,A. flagged (precision),Lang: MethodUtils.java:181,dummy_handler,"                            parameterTypes);
+                } catch (final NoSuchMethodException ignored) {
+                    /*
+                     * Swallow, if no method is found after the loop then this
+                     * method returns null.
+                     */
+                }",,,
+6,A. flagged (precision),Lang: MethodUtils.java:336,dummy_handler,"            return MemberUtils.setAccessibleWorkaround(cls.getMethod(methodName, parameterTypes));
+        } catch (final NoSuchMethodException ignored) {
+            // Swallow the exception
+        }",,,
+7,A. flagged (precision),Compress: Messages.java:211,dummy_handler,"                .getBundle(resource, locale, loader != null ? loader : ClassLoader.getSystemClassLoader()));
+        } catch (final MissingResourceException e) {
+            // ignore
+        }",,,
+8,A. flagged (precision),Lang: NumberUtils.java:460,dummy_handler,"                return createLong(str);
+            } catch (final NumberFormatException ignored) {
+                // ignore the bad number
+            }",,,
+9,A. flagged (precision),Lang: FieldUtils.java:200,dummy_handler,"                return field;
+            } catch (final NoSuchFieldException ignored) {
+                // ignore
+            }",,,
+10,A. flagged (precision),Gson: UnsafeAllocator.java:67,"generic_catch, dummy_handler","      };
+    } catch (Exception ignored) {
+      // OK: try the next way
+    }",,,
+11,A. flagged (precision),Compress: Messages.java:190,dummy_handler,"                format = bundle.getString(msg);
+            } catch (final MissingResourceException e) {
+                // ignore
+            }",,,
+12,A. flagged (precision),Gson: JsonReader.java:1043,dummy_handler,"        return result;
+      } catch (NumberFormatException ignored) {
+        // Fall back to parse as a double below.
+      }",,,
+13,A. flagged (precision),Lang: NumberUtils.java:435,dummy_handler,"                        return createBigDecimal(numeric);
+                    } catch (final NumberFormatException ignored) {
+                        // ignore the bad number
+                    }",,,
+14,A. flagged (precision),Compress: TempFileCachingStreamBridge.java:56,dummy_handler,"                        Files.deleteIfExists(path);
+                    } catch (final IOException ignore) {
+                        // if this fails the only thing we can do is to rely on deleteOnExit
+                    }",,,
+15,A. flagged (precision),Lang: NumberUtils.java:402,dummy_handler,"                            return createLong(numeric);
+                        } catch (final NumberFormatException ignored) {
+                            // Too big for a long
+                        }",,,
+16,A. flagged (precision),Lang: FieldUtils.java:130,dummy_handler,"            return field;
+        } catch (final NoSuchFieldException ignored) {
+            // ignore
+        }",,,
+17,A. flagged (precision),Lang: Failable.java:319,generic_catch,"            return supplier.getAsBoolean();
+        } catch (final Throwable t) {
+            throw rethrow(t);
+        }",,,
+18,A. flagged (precision),Lang: Functions.java:479,generic_catch,"            return supplier.get();
+        } catch (final Throwable t) {
+            throw rethrow(t);
+        }",,,
+19,A. flagged (precision),Compress: Pack200.java:281,generic_catch,"                return Pack200.class.getClassLoader().loadClass(className).getConstructor().newInstance();
+            } catch (final Exception e) {
+                throw new Error(Messages.getString(""archive.3E"", className), e); //$NON-NLS-1$
+            }",,,
+20,A. flagged (precision),Compress: Archive.java:209,"generic_catch, dummy_handler","                inputStream.close();
+            } catch (final Exception e) {
+            }",,,
+21,A. flagged (precision),Lang: Failable.java:531,generic_catch,"                    runnable.run();
+                } catch (final Throwable t) {
+                    if (th == null) {
+                        th = t;
+                    }
+                }",,,
+22,A. flagged (precision),Compress: Archive.java:218,"generic_catch, dummy_handler","                    logFile.close();
+                } catch (final Exception e) {
+                }",,,
+23,A. flagged (precision),Compress: SevenZFile.java:2129,"generic_catch, dummy_handler","                    }
+                } catch (final Exception ignore) {
+                    // Wrong guess...
+                }",,,
+24,A. flagged (precision),Lang: Failable.java:364,generic_catch,"            return supplier.getAsLong();
+        } catch (final Throwable t) {
+            throw rethrow(t);
+        }",,,
+25,A. flagged (precision),Gson: UnsafeAllocator.java:113,"generic_catch, dummy_handler","      };
+    } catch (Exception ignored) {
+      // OK: try the next way
+    }",,,
+26,A. flagged (precision),Lang: Failable.java:524,generic_catch,"            action.run();
+        } catch (final Throwable t) {
+            th = t;
+        }",,,
+27,A. flagged (precision),Lang: ClassUtils.java:206,generic_catch,"                classes.add(Class.forName(className));
+            } catch (final Exception ex) {
+                classes.add(null);
+            }",,,
+28,A. flagged (precision),Lang: LockingVisitors.java:269,generic_catch,"                consumer.accept(object);
+            } catch (final Throwable t) {
+                throw Failable.rethrow(t);
+            } finally {",,,
+29,A. flagged (precision),Lang: Failable.java:304,generic_catch,"            return supplier.get();
+        } catch (final Throwable t) {
+            throw rethrow(t);
+        }",,,
+30,A. flagged (precision),Lang: Functions.java:541,generic_catch,"            runnable.run();
+        } catch (final Throwable t) {
+            throw rethrow(t);
+        }",,,
+31,B. not flagged (misses),Gson: Gson.java:947,none,"      throw new JsonIOException(e);
+    } catch (AssertionError e) {
+      throw new AssertionError(
+          ""AssertionError (GSON "" + GsonBuildConfig.VERSION + ""): "" + e.getMessage(), e);
+    } finally {",,,
+32,B. not flagged (misses),Lang: ReflectionDiffBuilder.java:135,none,"                    diffBuilder.append(field.getName(), FieldUtils.readField(field, left, true), FieldUtils.readField(field, right, true));
+                } catch (final IllegalAccessException e) {
+                    // this can't happen. Would get a Security exception instead
+                    // throw a runtime exception in case the impossible happens.
+                    throw new IllegalArgumentException(""Unexpected IllegalAccessException: "" + e.getMessage(), e);
+                }",,,
+33,B. not flagged (misses),Compress: ArjArchiveInputStream.java:101,none,"            }
+        } catch (final IOException ioException) {
+            throw new ArchiveException(ioException.getMessage(), ioException);
+        }",,,
+34,B. not flagged (misses),Gson: TypeAdapters.java:619,none,"            return nextString.equals(""null"") ? null : new URI(nextString);
+          } catch (URISyntaxException e) {
+            throw new JsonIOException(e);
+          }",,,
+35,B. not flagged (misses),Compress: TarUtils.java:452,none,"                sparseOffset = Long.parseLong(sparseHeaderStrings[i]);
+            } catch (final NumberFormatException ex) {
+                throw new IOException(""Corrupted TAR archive.""
+                    + "" Sparse struct offset contains a non-numeric value"");
+            }",,,
+36,B. not flagged (misses),Gson: Gson.java:1371,none,"      throw new JsonSyntaxException(e);
+    } catch (IllegalStateException e) {
+      throw new JsonSyntaxException(e);
+    } catch (IOException e) {",,,
+37,B. not flagged (misses),Gson: ReflectiveTypeAdapterFactory.java:233,none,"            fieldValue = accessor.invoke(source);
+          } catch (InvocationTargetException e) {
+            String accessorDescription =
+                ReflectionHelper.getAccessibleObjectDescription(accessor, false);
+            throw new JsonIOException(
+                ""Accessor "" + accessorDescription + "" threw exception"", e.getCause());
+          }",,,
+38,B. not flagged (misses),Compress: Messages.java:127,none,"            return bundle.getString(msg);
+        } catch (final MissingResourceException e) {
+            return ""Missing message: "" + msg; //$NON-NLS-1$
+        }",,,
+39,B. not flagged (misses),Lang: ClassUtils.java:790,none,"                candidateMethod = candidateClass.getMethod(methodName, parameterTypes);
+            } catch (final NoSuchMethodException ex) {
+                continue;
+            }",,,
+40,B. not flagged (misses),Lang: NumberUtils.java:1603,none,"            return Long.parseLong(str);
+        } catch (final NumberFormatException nfe) {
+            return defaultValue;
+        }",,,
