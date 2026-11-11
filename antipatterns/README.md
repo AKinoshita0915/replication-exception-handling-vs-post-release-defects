@@ -31,14 +31,19 @@ python3 crosscheck.py   SRC_DIR ../counts results     # independent re-check + a
   nor calls `interrupt()`.
 
 ## Limits
-- Detection is syntactic. It does not follow exception flow, so it is not JTratch.
-- These libraries hardly log, so Log and Throw never occurs and cannot be tested, and
-  almost every Dummy Handler is an empty catch.
-- `results/manual_check_sheet_filled.xlsx` is the filled manual check (40 blocks):
-  30 of 30 flagged blocks correct, 0 of 10 unflagged blocks missed. It uses the same definitions
-  as the detector.
+- Detection is syntactic. It does not follow exception flow, so it is not JTratch, and we have not run JTratch.
+- These libraries hardly log, so Log and Throw never occurs and cannot be tested statistically, and
+  almost every Dummy Handler (41 of 42 blocks) is an empty catch.
+- The Dummy Handler definition does not cover handlers that only return a default value or
+  continue/break (38 of the 254 unflagged blocks), so prevalence may be underestimated.
+
+## Checks
+- `results/manual_check_sheet_filled.xlsx`: manual check of 40 blocks. All 30 sampled flagged blocks are
+  correct and none of the 10 sampled unflagged blocks is a miss. It uses the same definitions as the
+  detector, so it checks the implementation, not the definitions.
 - `crosscheck.py` re-implements the four flags without tree-sitter (`results/crosscheck.txt`): same 325
-  blocks, no disagreement. It also sorts the 254 unflagged blocks; 38 only return a default value or
-  continue/break, which the Dummy Handler definition does not cover.
-- Lang has 41 catch files with a real catch block, not 49: eight listed files contain `catch (`
-  only in Javadoc (see `results/files.csv`).
+  blocks, no disagreement. It also classifies the 254 unflagged blocks by their body.
+
+## Notes
+- Lang has 41 catch files with a real catch block, not 49: eight listed files contain `catch (` only in
+  Javadoc (see `results/files.csv`).

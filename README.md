@@ -71,4 +71,4 @@ Files are matched by path without rename tracking. The resulting file lists are 
 
 The baseline reproduction is complete. The anti-pattern detector (a syntactic tree-sitter detector, not JTratch), its
 cross-check and the comparison on the four libraries are done and exploratory (Milestone 3). Still to do: return-only and
-continue/break handlers, and more releases per library.
+continue/break handlers, a cross-check of our flags with JTratch, and more releases per library.
