@@ -1,0 +1,8 @@
+independent parser: 325 catch blocks; detect.py: 325
+blocks only in one list: 0 / 0
+disagreements per flag: none
+unflagged blocks: 254
+  throws or rethrows: 197
+  only a return (null/false/default): 36
+  other real statements: 19
+  only continue/break: 2

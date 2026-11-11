@@ -1,0 +1,11 @@
+set,pattern,defective_with,defective_total,other_with,other_total,pct_defective,pct_other,odds_ratio,p_fisher
+All four,Generic Catch,2,19,17,115,10.5,14.8,0.68,1.0
+All four,Dummy Handler,8,19,17,115,42.1,14.8,4.19,0.009
+All four,Log and Throw,0,19,0,115,0.0,0.0,,1.0
+All four,Ignoring Interrupted Exc.,0,19,2,115,0.0,1.7,0.0,1.0
+All four,Any of the four,8,19,30,115,42.1,26.1,2.06,0.174
+Lang+Compress,Generic Catch,2,15,12,83,13.3,14.5,0.91,1.0
+Lang+Compress,Dummy Handler,8,15,13,83,53.3,15.7,6.15,0.003
+Lang+Compress,Log and Throw,0,15,0,83,0.0,0.0,,1.0
+Lang+Compress,Ignoring Interrupted Exc.,0,15,2,83,0.0,2.4,0.0,1.0
+Lang+Compress,Any of the four,8,15,23,83,53.3,27.7,2.98,0.07

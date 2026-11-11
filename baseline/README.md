@@ -8,19 +8,12 @@ replace analysis_functions.R with our version (one line changed, see baseline_ch
 run 0-DataSourcesAnalysis.Rmd then 1-Model_Construction.Rmd.
 
 ### Adjustments
-In analysis_functions.R, there is known problem at modelSimplification method. Apply the following fix:
-    In line 270 ( if(class_refit != "try-error" && !identical(refit, NA)) {... ), replace as: 
-        if(!inherits(refit, "try-error") && !identical(refit, NA)) {...
-    Save and run the file.
-
-OR in console:
-    fix(modelSimplification)
-    New window would be pop-up. Find ( if(class_refit != "try-error" && !identical(refit, NA)) {... ), replace with:
-        if(!inherits(refit, "try-error") && !identical(refit, NA)) {...
-    Click "Save" to apply change.
-
-veryfy the update in the session by 
-body(modelSimplification), and find modified section.
+`analysis_functions.R` in this folder already contains our one-line fix, so nothing has to be changed by hand.
+If you use the authors' original file instead, change line 270 in `modelSimplification` from
+`if(class_refit != "try-error" && !is.na(refit)) {` to
+`if(class_refit != "try-error" && !identical(refit, NA)) {`
+(R 4.6 does not allow `&&` on a vector; see `baseline_change_log.md`, row 5). To check the change in an R session, run
+`body(modelSimplification)` and look for the modified line.
 
 ## Results: 
 - baseline_comparison.csv.
