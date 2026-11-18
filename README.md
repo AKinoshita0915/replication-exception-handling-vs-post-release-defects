@@ -12,6 +12,22 @@ We replicate **RQ2 only, Java projects only**: do exception-handling anti-patter
 explain post-release defects beyond traditional metrics (a BASE model versus a BSAP
 model that adds anti-pattern metrics)?
 
+## How to reproduce the Milestone 4 results
+
+```
+git clone https://github.com/AKinoshita0915/replication-exception-handling-vs-post-release-defects.git
+cd replication-exception-handling-vs-post-release-defects
+./reproduce.sh            # optional argument: a working directory (default ./work)
+```
+
+Needs Python 3.11 or newer, git, and an internet connection. The JTratch cross-check step also needs a Java 8 JDK
+and is skipped if none is found ([`antipatterns/run_jtratch.md`](antipatterns/run_jtratch.md)).
+The script creates a virtual environment from [`requirements.txt`](requirements.txt), clones the four libraries and checks
+that each is at its release commit, runs the detector, comparison, models, sensitivity analysis, BASE vs BSAP model and the
+JTratch cross-check, and finishes with `antipatterns/check_results.py`, which compares the regenerated numbers with the ones
+in the reports. A successful run ends with `16 of 16 checks passed` (it took under 3 minutes on a clean directory, plus clone time).
+The baseline (Hadoop and Hibernate) is reproduced separately in R, see [`baseline/README.md`](baseline/README.md).
+
 ## What is in this repository
 
 | Folder | Content |
