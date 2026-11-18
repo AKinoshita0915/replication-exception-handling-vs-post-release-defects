@@ -1,0 +1,21 @@
+our blocks 325, JTratch blocks 325, matched on library/file/line 325, only ours 0, only JTratch 0
+
+block level, matched blocks (ours versus JTratch-derived flags):
+pattern        ours  jt  both  agree%  kappa
+generic          37  44   37   97.8  0.90
+dummy            42  48   42   98.2  0.92
+log_and_throw     0   0    0  100.0  nan
+interrupted       2   1    1   99.7  0.67
+
+dummy-handler disagreements: 6
+  Compress TarArchiveEntry.java:1497 ours=0 jtratch=1  'catch (final IOException ex) { // NOSONAR try { parseTarHeader(header,'
+  Compress TarArchiveEntry.java:2066 ours=0 jtratch=1  'catch (final IOException ex) { // NOSONAR try { writeEntryHeader(outbu'
+  Compress TarUtils.java:267 ours=0 jtratch=1  'catch (final IOException ex) { // NOSONAR try { return formatNameBytes'
+  Compress TarUtils.java:490 ours=0 jtratch=1  'catch (final IOException ex) { // NOSONAR try { return parseName(buffe'
+  Gson LazilyParsedNumber.java:48 ours=0 jtratch=1  'catch (NumberFormatException e) { try { return (int) Long.parseLong(va'
+  Lang SerializationUtils.java:106 ours=0 jtratch=1  'catch (final ClassNotFoundException ex) { try { return Class.forName(n'
+
+file level (134 catch files):
+  our Dummy Handler: defective 8/19, other 17/115, OR 4.19, Fisher p 0.009
+  JTratch-derived dummy: defective 9/19, other 19/115, OR 4.55, Fisher p 0.005
+  file-level agreement on 'has a dummy handler': 97.8%, kappa 0.93

@@ -1,0 +1,11 @@
+# Python packages for the anti-pattern pipeline (Milestones 3 and 4). Python 3.11 or newer.
+# Versions below are the ones the committed results were regenerated with (Linux, Python 3.13).
+pandas==3.1.1
+numpy==2.5.5
+scipy==1.18.1
+statsmodels==0.15.0
+patsy==1.0.3
+openpyxl==3.1.5
+lizard==1.26.1
+tree-sitter==0.26.1
+tree-sitter-java==0.23.5
